@@ -1,0 +1,48 @@
+# Definindo Funções
+# Exemplo de utilização de função:
+cores = ["Verde", "Amarelo", "Azul", "Branco"]
+# Utilizando função integrada do PYTHON (já vem no python) (build-in)
+print(cores)
+curso = "Programação em Python"
+print(curso)
+cores.append("Roxo")
+print(cores)
+#curso.append("Mais dados") # Vai dar erro pq str n tem atributo para 'append''
+#print(curso)
+cores.clear()
+#print(cores)
+#print(help(print))
+
+# Como definir funções:
+# def nome_função(parametros de entrada):
+#   bloco da função
+# Nome da função SEMPRE com letras minusculas, se for composto utilizar underline (_)
+# Parametros de entreda são opicionais,onde tendo mais de um cada um deve ser separado por virgula, podendo ser opicionais ou não
+# Bloco da função, é onde os comandos vão ocorrer
+# Observação: Veja que para definir uma função utilizamos a palavra reservada 'def', informando ao python que estamos definindo uma função
+
+
+
+# DEFININDO A PRIMEIRA FUNÇÃO
+def diz_oi():
+    print("Hello World")
+# Veja que a função só executa uma tarefa, (Hello World)
+# utilizandoa função
+diz_oi()
+
+def cantar_parabens():
+    print("Parabéns pra você")
+    print("Nessa")
+    print("Data querida")
+
+#cantar_parabens()
+#for n in range(5):# Vai executar 5  vezes
+#    cantar_parabens()
+
+# Em python podemos criar variaveis do tipo de uma função e executar essa função atráves da variavél
+canta = cantar_parabens() # não é comum fazer isso
+print(canta)
+# ou
+canta = cantar_parabens# não é comum fazer isso!!!!
+canta()
+

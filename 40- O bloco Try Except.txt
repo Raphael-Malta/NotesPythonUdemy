@@ -1,0 +1,46 @@
+# Try/Except
+# utilizamos o bloco try/except para tratar erros que podem ocorrer no nosso codigo, privnindo assim que o programa pare
+# de funcionar e o usuario receba mensagens de erro inesperadas
+# A forma geral mais simples é:
+# try:
+#       execução problematica
+# except:
+#       O que fazer caso de problema
+
+# Exemplo 1:
+# tratando um erro generico
+
+try :
+    geek()
+except:
+    print('Deu algum problema')
+# Obs: Tratar erro de forma generica não é a melhor forma de tratamento de erros, o ideal é sempre tratar de formar especifica
+
+# Exemplo : Tratando um erro especifico
+try :
+    geek()
+except NameError:
+    print('Voce está utilizando uma função inexistente ')
+
+try :
+    geek()
+except NameError as err:
+    print(f'Surgiu o seguinte erro {err}')
+
+try:
+    len(5) #Pode usar varios erros para testar aqui
+except NameError as erra:
+    print(f'Deu name error {erra}')
+except TypeError as err:
+    print(f'Deu type error {err}')
+except:
+    print('deu um erro diferente')
+
+
+def pega_valor(dicionario,chave):
+    try:
+        return dicionario[chave]
+    except KeyError:
+        return None
+dic = {'nome' : 'Geek'}
+print(pega_valor(dic,'game'))

@@ -1,0 +1,70 @@
+# Funções com parametro Padrão
+# Exemplo de função onde a passagem de parametro é obrigatoria
+
+
+def quadrado(num):
+    return num ** 2
+
+
+print(quadrado(3))
+
+
+def exponencial(num, pot=2):# Quando se coloca o valor de potencia, ele se torna opicional como na linha a baixo mostra
+    return num ** pot
+
+print(exponencial(2,3))
+print(exponencial(2))
+
+# Exemplo:
+
+def mostra_info(nome="Raphael", instrutor = False):
+    if nome == "Raphael" and instrutor:
+        return "Bem Vindo Raphael"
+    elif nome == "Raphael":
+        return "Pensei que vc era instrutor"
+    return "ola",nome
+print(mostra_info())
+print(mostra_info(instrutor=True))
+print(mostra_info("Malta"))# Ou
+print(mostra_info(nome="Malta"))
+
+# o Uso de parametros com valores pre-definidos, nos permite ser mais flexiveis e evita erros
+# Usando funções como parametros
+
+
+def soma(num1, num2):
+    return num1 + num2
+
+
+def sub(num1, num2):
+    return num1 - num2
+
+
+def mat(num1, num2, fun = soma):
+    return fun(num1,num2)
+
+
+print(mat(2,3)) # Nesse caso como não foi passada uma função, por padrão ela vai somar
+print(mat(2,2,sub))# aqui foi passado a função subtração
+
+
+# utilizando variavel global
+
+
+total= 1
+
+def soma():
+    total= total +1# desse jeito vai dar erro pq não se inicializou corretamente a variavel
+    return total
+print(soma())
+
+# Jeito correto
+total= 1
+
+def soma():
+    global total
+    total= total +1
+    return total
+print(soma())
+print(soma())# vai alterando o valor de total q é global, ou seja somando sempre 1 e alterando o resultado final la
+print(soma())

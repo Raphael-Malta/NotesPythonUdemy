@@ -1,0 +1,50 @@
+# Listas aninhadas (Nisted Lists)
+# Algumas linguagens de programação possuem uma estrutura de dados chamadas arrays :(que pode ser)
+# Unidimensionais (vetores)
+# Multidimensionais (Matrizes)
+# mas em python isso não existe, em python nos temos as listas
+# numeros = [1, 2, 3, 4, 5] # em outras linguagens isto seria um array. mas em python é listas
+# numeros = [1, 2.4, True,"string"]
+
+listas = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] # istó seria uma matriz 3x3
+print(listas)
+print(type(listas))
+# como acessar os dados
+print(listas[0])
+print(listas[0][1])
+print(listas[2][1])
+print(listas[2][-2])# Como estudamos sempre pensar em um circulo
+
+# Iterando com loops uma lista ninhada
+
+for lista in listas:
+    print(lista)
+
+for lista in listas:
+    for num in lista:
+        print(num)
+
+# Lista Compreension
+[[print (valor) for valor in lista] for lista in listas]
+ # para comprrender a linha a cima
+#for lista in listas para cada lista em listas, aqui vc pega cada lista separadamente e depois trabalha elas
+#for valor in lista para cado valor em lista, imprima o valor
+
+# Outros exemplos
+# Gerando um tabuleiro / matriz 3x3
+
+tabuleiro = [[numero for numero in range(1,4)]for valor in range(1,4)]
+#for valor in range(1,4)] Gera as colunas dos elementos
+#numero for numero in range(1,4) Gera as linhas dos elementos
+print(tabuleiro)
+
+# gerando jogadas para o jogo da velha
+velha = [["X" if numero %2 == 0 else "O" for numero in range(1,4)]for valor in range(1,4)]
+print(velha)
+for num in velha:
+    print(num)
+
+
+# Gerando valores iniciais
+
+print([["*"for i in range(1,4)]for j in range(1,4)])

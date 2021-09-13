@@ -1,0 +1,15 @@
+#Comandos não tão usados mas uteis
+#Encontrar o indice do elemento na lista
+num = [5,6,7,8,9,10]
+print(num.index(6))#mostra o indicie(posição)
+#caso não tenha o elemento vai dar erro
+#se forem dois elementos iguais ele retorna o primeiro elemento encontrado
+#exemplo
+numero=[1,2,3,4,5,6,4]
+print(numero.index(4))
+
+#Podemos fazer busca dentro de um range, ou seja qual indice começar a buscar
+print(num.index(6,1))#buscando a partir do indice 1
+
+#podemos fazer busca entre,dentro de um range, inicio fim
+print(num.index(8,3,6))#acha o numero 8 entre os indices 3 e 6

@@ -1,0 +1,76 @@
+# Métodos de dicionarios
+d = dict(a=1, b=2, c=3)
+print(d)
+print(type(d))
+# Limpar o dicionario(zerar o dicionario)
+d.clear()
+print(d)
+
+# Copiando um dicionario para outro
+# Forma 1
+novo = d.copy()
+print(novo)
+novo["d"]=4
+print(d)# Continua com os mesmos dados e não é alterado pelo novo (Deep Copy)
+print(novo)
+
+# Forma 2 : Shallow copy ambos são alterados
+novo = d
+print(novo)
+novo["d"] = 4
+print(d)
+print(novo)
+
+
+
+# Formar usual de criação de dicionarios
+outro = {}.fromkeys ("a","b")# a é a chave e o b é o valor
+print(outro)
+print(type(outro))
+
+usuario = {}.fromkeys(["nome", "sobrenome", "email", "profile"],"desconhecido")# nome, sobrenome, email,profile são chaves e desconhecido é o valor
+print(usuario)
+print(type(usuario))
+# o metodo fromkeys recebe dois parametros, um iteravel e um valor
+# ele vai gerar para cada valor do iteravel um chave e ira atribuir a está chave o valor informado
+
+veja = {}.fromkeys("teste","chave")# Em dicionario n tem repetição de chave por isso só imprime as letras T E S
+print(veja)
+
+veja1 = {}.fromkeys(range(1 , 11), "novo")
+print(veja1)
+
+
+
+
+# Mapas conhecidos em python como dicionarios, dicionarios são representados por {}
+
+receita = {"Jan": 100, "Fev": 250,"Marc": 400}
+# Iterando em dicionario (loops)
+for chave in receita:
+    print(chave)#Aqui imrpime as chaves
+for chave in receita:
+    print(receita[chave])#Aqui imprime os valores
+for chave in receita:
+    print("Em",chave,"recebi:",receita[chave])
+# Acessando as chaves
+print(receita.keys())# Mostra só as chaves(jan,fev,mac)
+
+for chave in receita.keys():
+    print(receita[chave])
+
+# Acessando os valores
+print(receita.values())
+for valor in receita.values():
+    print(valor)
+# Desempacotar dicionarios
+for chave, valor in receita.items():
+    print("aa",chave, valor)
+
+# Soma, ValorMaximo, ValorMinimo, Tamanho
+# Só pode usar max e min se os valores forem inteiros ou reais
+
+print(sum(receita.values()))
+print(max(receita.values()))
+print(min(receita.values()))
+print(len(receita.values()))

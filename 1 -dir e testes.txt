@@ -1,0 +1,56 @@
+dir(tipo de dado)
+dir(10)
+dir("raphael")
+
+nome = input("Informe seu nome: ")
+idade = int(input("Informe sua idade: "))
+
+print("Bem vindo ",nome,", aVocê nasceu em", (2020-idade))
+
+#teste
+nome = 'Raphael Malta'
+lista = [1,5,8,10]
+numeros = range(1,10)
+for indice,letra in enumerate(nome):
+    print(letra)
+#Pode-se descartar o indice, e colocar um underline no lugar
+for _, letra in enumerate(nome):
+    print(letra)
+
+for valor in enumerate(nome):
+    print(valor)
+par = 1
+while par == 1:
+    idad = int(input("Escreva sua idade: "))
+    if idad > 100 or idad < 1:
+        par = 1
+    else:
+        par = 0
+
+#Teste2
+
+#string
+for letra in nomee:
+    print(letra)
+#lista
+for numero in lista:
+    print(numero)
+#range
+#range(Valor_Inicial, ValorFinal)
+for numero in range(1, 10):
+    print(numero)
+
+qtd = int(input("Informe qnts vezes o loop vai rodar: "))
+soma=0
+for n in range(1,qtd):#se quiser o valor completo use qtd+1
+    num=int(input("Informe o valor:"))
+    soma = soma + num
+print("A soma é: ",soma)
+
+#Imprimindo tudo nas mesma linha:
+nomee= 'Raphael Malta Rosa Oliveira'
+for letra in nomee:
+    print(letra, end='')
+    nome = 'Rapha '
+for num in range(1, 21):
+    print(nome * num)

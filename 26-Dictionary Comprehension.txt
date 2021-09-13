@@ -1,0 +1,34 @@
+# Dictionary Comprehension
+# Se quisermos criar uma lista fazemos lista = [1, 2, 3, 4]
+# Se quisermos criar uma tupla tupla = (1, 2, 3, 4)  ouu tupla = 1,2,3,4
+# Se quisermos criar um set(conjunto)   set = {1, 2, 3, 4}
+# Se quisermos criar um dicionario    dicionario = {"a":1, "b": 2, "c":3}
+
+
+
+# Sintaxy
+# {chave:valor for valor in iteravel} Dictionary Comprehension
+
+# Exemplo
+
+numeros = {"a":1, "b": 2, "c": 3, "d": 4, "e": 5}
+quadrado = {chave:valor **2 for chave,valor in numeros.items()}
+print(quadrado)
+
+numeros = [1, 2, 3, 4, 5, 1, 2]# Lista de numeros, o dicionario não vai repetir o 1 e 2, por conta que dicionario não faz repetição de chave
+quadrados = {valor:valor ** 2 for valor in numeros}# para cada valor da lista, coloque um valor e eleve ao 4 o número da lista
+print(quadrados)
+#for numero in range(0, 20):# teste básico com range
+    #print(numero)
+
+
+chaves = "abcde"
+valores = [1, 2, 3, 4, 5]
+mistura = {chaves[i]: valores[i] for i in range(0,len(chaves))}
+print(mistura)
+
+
+# Exemplo com logica condicional
+numer = [1, 2, 3, 4, 5]
+res = {num :("par" if num %2 == 0 else "Impar")for num in numer}
+print(res)

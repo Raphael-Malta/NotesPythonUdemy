@@ -1,0 +1,56 @@
+# Generator Expression
+# Em aulas anteriores estuadomos list compreenshion
+# mas não vimos tuple compreenshion e pq elas são chamadas de generators:
+
+# utilizando generatos
+
+nomes = ['Carlos', 'Camila', 'Carla', 'Celso', 'Vanessa']
+
+print(any(nome[0] == 'C' for nome in nomes))
+
+# Como list compreenshion
+resultado = [nome[0] == 'C' for nome in nomes]
+print(type(resultado))
+print(resultado)
+
+# Como generator
+result = (nome[0] == 'C' for nome in nomes)
+print(type(result))
+print(result)
+
+# a utilidade de getsizeof: Retorna a quantidade de bytes em memoria do elemento passado como parametro
+from sys import getsizeof
+# Mostra quantos bytes a string geek está ocupando em memoria
+# Quanto maior a string mais espaço ocupa
+print(getsizeof('Geek'))
+print(getsizeof('9'))
+print(getsizeof('900'))
+print(getsizeof(True))
+print(getsizeof('541541541545'))
+
+# Gerando uma lista de numeros com list compreenshion
+list_comp = getsizeof([x * 10 for x in range(1000)])
+
+# Gerando uma lista de numeros com Set compreenshion
+set_comp = getsizeof({x * 10 for x in range(1000)})
+
+# Gerando uma lista de numeros com DIctonary compreenshion
+dict_comp = getsizeof({x : x * 10 for x in range(1000)})
+
+# Gerando uma lista de numeros com Generator
+gen = getsizeof(x * 10 for x in range(1000))
+# os prints mostram o gasto de memoria para fazer a mesma tarefa, vemos que o gen possui a menor taxa de bytes utilizados
+
+print(f'O Lista gasta {list_comp} bytes ')
+print(f'O Lista gasta {set_comp} bytes')
+print(f'O Lista gasta {dict_comp} bytes')
+print(f'O Lista gasta {gen} bytes')
+
+
+# iterando no Generator Expression
+gen = (x * 10 for x in range(1000))
+print(type(gen))
+print(gen)
+
+for numero in gen:
+    print(numero)

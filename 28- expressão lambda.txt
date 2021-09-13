@@ -1,0 +1,57 @@
+# Geralmente é utilizado em filtragens e ordenação de dados, por exemplo no esquema de ordenação que tem em baixo com os nomes
+# 
+
+
+# Expressões Lambdas
+# Conhecidas por expressões lambdas ou só lambdas, são funções sem nome
+# Ou seja funções anonimas
+
+# função normal em python
+
+
+def funcao(x):
+    return 3 * x + 1
+
+
+print(funcao(5))
+
+# Exemplo de espressão lambda, resolvendo a função de cima
+# Como n tem nome, já se põe o parametro, depois dos dois pontos vc coloca o retorno da função
+lambda x: 3 * x + 1 # Ela apenas assim n funciona
+
+# como utilizar a espressão lambda
+calc = lambda x: 3 * x + 1 # não é uma forma muito usual
+print(calc(7))
+
+# Podemos ter expressões lambdas com multiplas entradas(parametros)
+nome_completo = lambda nome, sobrenome: nome.strip().title() + " " + sobrenome.strip().title()# strip remove espaços no inicio e no fim da variavel, isso evita espaços desnecessários// Title é pra fazer a inicial ficar maiuscula
+print(nome_completo("  raphael","malta  "))
+
+# Em funções python podemos ter nenhuma ou varias entras, nos lambdas tbm!
+teste = lambda: "Como não amar python!?"
+print(teste())
+
+# Outro exemplo:
+autores = ["Isaac Asimov", "Exemplo Beslok", "Exemplo Cesto", "Exemplo Hilianoc", "Exemplo Abismo"]
+print(autores)
+# Ordernando pelo sobrenome essa lista
+autores.sort(key=lambda sobrenome: sobrenome.split(" ")[-1].lower())#Vai pegar o sobrenome, usar o split separando por espaço e utilizar o -1 para pegar o ultimo elemento
+# O split separa o nome, exemplo "Raphael Malta", ficaria "Raphael" "Malta"
+# o -1 pega o ultimo, ou seja no exemplo a cima "Malta"
+# Lower coloca tudo em minusculo
+# Sort faz a ordenação por isso o autores.sort usado junto com o lambda
+print(autores)
+
+# Pode-se utilizar lambda para fazer funções quadraticas.
+# Função quadradica
+#f(x) = a * x ** 2 + b * x + c
+
+# Definindo a função
+def func_quadratica(a,b,c):
+    # Retorna a função f(x) = a * x ** 2 + b * x + c
+    return lambda x: a * x ** 2 + b * x + c
+teste = func_quadratica(2,3,-5)
+print(teste(0))# aqui se passa o x
+print(teste(1))
+print(teste(2))
+print(func_quadratica(3,0,1)(2))# Pode se utilizar desse jeito tbm

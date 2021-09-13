@@ -1,0 +1,44 @@
+#transformar um lista em tupla
+
+lista = [1,2,3,4,5,6]
+print(lista)
+print(type(lista))
+tupla= tuple(lista)
+print(tupla)
+print(type(tupla))
+
+
+
+#desempacotamento de listas
+lista=[1,2,3]
+num1,num2,num3=lista
+print(num1)
+print(num2)
+print(num3)
+#tem que ser o mesmo tamanho, se a lista tiver 4 elementos e vc tentar com 3 variaveis, não vai dar certo
+
+
+
+#copiando uma lista para outra (Shallow copy e Deep Copy)
+lista = [1,2,3]
+print(lista)
+nova =lista.copy()#copiou a lista
+print(nova)
+nova.append(4)#modificou a lista copiada sem alterar a original
+print(lista)
+print(nova)
+#Fazendo assim q podemos trabalhar com as duas listas de maneira independente
+#Isso se chama Deep Copy
+
+#agora a Shallow Copy
+
+lista = [1,2,3]
+print(lista)
+
+nova = lista#Copiando a lista
+print(nova)
+
+nova.append(4)
+print(lista)#No caso da Shallow copy ela copia a lista mas ao alterar uma vc altera as duas
+print(nova)#não trabalham independentemente e sim se alterar uma as duas seram alteradas
+#isso é chamado de Shallow copy

@@ -1,0 +1,27 @@
+# achando erros com raise
+# não é uma função
+# é uma palavra reservada
+# a forma geral de utilização raise tipo do erro mensagem de erro
+# raise TipoErro('Mensagem Erro')
+
+#raise ValueError("Erro de valor")
+# Veja o que o erro que está no parenteses é o erro que aparece ao executar
+
+# Exemplo real:
+
+def colore(texto,cor):
+    cores = ['verde', 'amarelo', 'azul', 'branco']
+    if type(texto) is not str:
+        raise TypeError("Texto precisa ser uma string")
+    if type(cor) is not str:
+        raise TypeError("Cor precisa ser uma string")
+    if cor  not in cores:
+        raise ValueError(f"A cor precisa ser uma de {cores}")
+    print(f'O texto {texto} vai vir na cor {cor}')
+
+colore ('Raphael','azul')
+colore ('Raphael','rosa')
+
+
+# o raise assim como o return, finaliza a função. Ou seja nada apos o raise é executado
+

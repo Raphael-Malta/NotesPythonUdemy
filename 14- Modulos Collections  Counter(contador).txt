@@ -1,0 +1,30 @@
+# Modulos Collections: Counter(Contador)
+# Counter : Recebe um iteralvel como parametro e cria um objeto do tipo Colections Counter, que é parecido com um dicionario,
+# contendo como chave o elemento da lista(q é passado como parametro) e como valor a quantidade de ocorrencias
+
+# Utilizando o counter
+# Primeiro tem que importar o counter:
+
+from collections import Counter
+# Exemplo 1:
+print(Counter("Raphael Malta"))# O espaço é contado tbm
+# Exemplo 2:
+lista = [1, 1, 1, 2, 2, 3, 3, 3, 3, 1, 1, 2, 2, 4, 4, 4, 5, 5, 5, 45, 45, 66, 66, 67]
+res = Counter(lista)# não precisa guardar em uma variavel
+print(type(res))
+print("Número/Quantidade: ",res)
+# Counter criou uma chave e colocou como valor a quantidade de ocorrencias(repetições)
+
+# Exemplo 3:
+texto = A wikipedia é uma ferramenta de busca, que possui uma variedade de informações
+palavras = texto.split()# repare que o split separa as palavras
+print(palavras)
+
+res = Counter(palavras)
+print(res)
+print(res.most_common(5))# aqui são as 5 mais comuns, ou seja as 5 que mais repetem
+
+# Recapitulando dicionarios
+dicionario = {"Curso" : "Programação em Python"}
+print(dicionario)
+print(dicionario["Curso"])

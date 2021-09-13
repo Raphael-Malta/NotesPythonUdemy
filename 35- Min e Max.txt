@@ -1,0 +1,100 @@
+
+# Min e Max
+# max() Retorna o maior valor de um iteravel ou o maior de dois ou mais elementos
+lista = [1, 8, 4, 99, 34, 129] # funciona em lista[]/tupla()/set{}, dicionario{ : }
+print(max(lista))
+
+tupla = (1, 8, 4, 99, 34, 129)
+print(max(tupla))
+
+set = {1, 8, 4, 99, 34, 129}
+print(max(set))
+
+dicionario = {'a': 1,'b': 8,'c': 4,'d': 99,'e': 34,'f': 129}
+print(max(dicionario))#mostraria só a chave, no caso mostraria a maior chave(letra f no caso)
+print(max(dicionario.values()))# Agora mostra o valor
+
+# Exemplo:
+# programa que receba dois valores do usuario e mostre o maior
+valor1 = int(input('Informe o 1 valor '))
+valor2 = int(input('Informe o 2 valor' ))
+print(max(valor1,valor2))
+
+# Exempl
+print(max(1,10,20,30,5000,11,0))# pode passar quantos valores quiser
+print(max('a', 'ab', 'abc'))
+print(max('a', 'b', 'c', 'g'))
+print(max('Raphael Malta'))
+
+
+# min retorna o menor valor de uma iteravel ou de dois ou mais elementos(contrario do max)
+lista = [1, 8, 4, 99, 34, 129] # funciona em lista[]/tupla()/set{}, dicionario{ : }
+print(min(lista))
+
+tupla = (1, 8, 4, 99, 34, 129)
+print(min(tupla))
+
+set = {1, 8, 4, 99, 34, 129}
+print(min(set))
+
+dicionario = {'a': 1,'b': 8,'c': 4,'d': 99,'e': 34,'f': 129}
+print(min(dicionario))
+print(min(dicionario.values()))
+
+# Exemplo:
+# programa que receba dois valores do usuario e mostre o maior
+valor1 = int(input('Informe o 1 valor '))
+valor2 = int(input('Informe o 2 valor' ))
+print(min(valor1,valor2))
+
+# Exempl
+print(min(1,10,20,30,5000,11,0))# pode passar quantos valores quiser
+print(min('a', 'ab', 'abc'))
+print(min('a', 'b', 'c', 'g'))
+print(min('Raphael Malta'))# Retorna o espaço que é o menor
+
+
+# Outros Exemplos.
+nomes = ["Raphael Malta", "Diego henrique", "Marcos Teixeira"]
+print(max(nomes))# Leva em consideração o alfabeto, logo R é a letra q é mais distante do inicio
+print(min(nomes))
+
+print(max(nomes, key=lambda nome: len(nome)))# Aqui ta pegando pelo tamanho
+print(min(nomes, key=lambda nome: len(nome)))
+
+
+# outro exemplo
+musicas =[
+    {"titulo" : "Thunderstruck", "tocou" : 3},
+    {"titulo" : "Dead skin mask", "tocou" : 2},
+    {"titulo" : "Back in back", "tocou" : 4},
+    {"titulo" : "Simple man ", "tocou" : 32},
+]
+print(max(musicas, key=lambda musica: musica["tocou"]))
+print(min(musicas, key=lambda musica: musica["tocou"]))
+
+
+# Desafio:
+# Imprimir somente o titulo da musica mais e menos tocada
+print(max(musicas, key=lambda musica: musica["tocou"])["titulo"])
+print(min(musicas, key=lambda musica: musica["tocou"])["titulo"])
+
+# Como encontrar a musica mais tocada e a musica menos tocada sem utilizar max,min e lambda
+max = 0
+for musica in musicas:
+    if musica["tocou"] > max:
+        max = musica["tocou"]
+
+for musica in musicas:
+    if musica["tocou"] == max:
+        print(musica["titulo"])
+
+min = 999999
+for musica in musicas:
+    if musica["tocou"] < min:
+        min= musica["tocou"]
+
+for musica in musicas:
+    if musica["tocou"] == min:
+        print(musica["titulo"])
+

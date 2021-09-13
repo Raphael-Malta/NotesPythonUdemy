@@ -1,0 +1,30 @@
+# Revisão slicing
+#lista[inicio,fim,passo]
+lista = [1,2,3,4]
+print(lista[1:])#iniciando do indice 1 e pegando o resto dos elementos
+print(lista[:3])#pegando do 0 até 3
+print(lista[-1:])#lembra como se fosse um circulo o -1 é o ultimo e assim por diante
+print(lista[1:3])#vai do 1 ao 3 indice, não é valor é posição
+print(lista[-4:4])
+print(lista[0:-1])
+print(lista[0:4:1])#o 3 valor é de quanto em quanto vai andar, no caso vai de um em um
+
+nomes= ['Raphael Malta', 'Oliveira']
+nomes[0], nomes[1] = nomes[1], nomes[0]
+print (nomes)
+#ambos fazem as mesma coisa
+nomes.reverse()
+print(nomes)
+
+
+##################################################################################
+#Soma,Valor Maximo, Valor Minimo, Tamanho
+#Se os valores forem todos inteiros ou reias *************************
+
+lista = [1,2,3,4,5,6]
+print(sum(lista))#soma
+print(max(lista))#maximo valor
+print(min(lista))#minimo valor
+print(len(lista))#TAMANHO
+
+##################################################################################

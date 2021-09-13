@@ -1,0 +1,86 @@
+#try except else finally
+# Toda entrada do usuario deve ser tratada ( ou seja toda entrada deve ser tratada)
+
+try:
+    num = int(input("informe um numnero "))
+except:
+    print("Digitou o valor inválido")
+else:
+    print(f'Voce digitou {num}')
+
+
+
+# Finally
+try:
+    num = int(input("Informe um numero: "))
+except ValueError:
+    print("Errado mané")
+else:
+    print(f"voce digitou {num}")
+finally:
+    print("Executando finally")
+# O finally é sempre executado, independente se houve erro ou não
+# Ele geralmente é utilizado para fechar ou desalocar recursos
+
+
+
+#Exemplo mais complexo ERRADO
+def dividir(a,b):
+    return a / b
+
+try:
+    num1= int(input("Infome o 1 numero: "))
+except ValueError:
+    print("O valor precisa ser númerico")
+try:
+    num2= int(input("Infome o 2 numero: "))
+except ValueError:
+    print("O valor precisa ser númerico")
+try:
+    print(dividir(num1,num2))
+except NameError:
+    print("O valor inválido")
+
+
+
+# Exemplo complexo correto
+
+def dividir(a,b):
+    try:
+        return int(a) / int(b)
+    except ValueError:
+        return'Valor incorreto'
+    except ZeroDivisionError:
+        return 'divisor não pode ser zero'
+
+num1= input("Infome o 1 numero: ")
+num2= input("Infome o 2 numero: ")
+print(dividir(num1,num2))
+
+
+# Ou vc pode colocar um tratamento generico (não tão correto)
+def dividir(a,b):
+    try:
+        return int(a) / int(b)
+    except:
+        return'Ocorreu um problema'
+
+
+num1= input("Infome o 1 numero: ")
+num2= input("Infome o 2 numero: ")
+print(dividir(num1,num2))
+
+
+
+
+# Tratamento semi generico
+def dividir(a,b):
+    try:
+        return int(a) / int(b)
+    except(ValueError,ZeroDivisionError)as erro:
+        return f'Ocorreu um erro: {erro}'
+
+
+num1= input("Infome o 1 numero: ")
+num2= input("Infome o 2 numero: ")
+print(dividir(num1,num2))

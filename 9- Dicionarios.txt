@@ -1,0 +1,150 @@
+# Dicionarios
+# Em algumas linguagens de programação os dicionarios são conhecidos como mapas
+# Dicionarios são coleções do tipo chave/valor
+# Dicionarios são representados por chaves {}
+print(type({}))
+
+# Sobre dicionarios
+# Chave e Valor são separados por dois pontos :
+# Exemplo   "chave" : "valor"
+# Tamto chave quanto valor podem ser de qualquer tipo de dado
+# Podemos misturar tipos de dados
+
+
+# Forma mais comum de criação de dicionarios
+paises = {"Br": "Brasil", "EUA": "Estados Unidos"}#Conjunto de chave BR:BRASIL é um elemento
+print(paises)
+print(type(paises))
+
+
+# Forma 2: (menos comum)
+
+paises2 = dict(br="Brasil",EUA="Estados Unidos")
+print(paises2)
+print(type(paises2))
+
+
+
+# Acessando elementos
+paises = {"Br": "Brasil", "EUA": "Estados Unidos"}
+
+#Forma 1:
+# Acessando via chave, mesma for que lista e tupla
+print(paises["Br"])#Vc utiliza a chave
+print(paises["EUA"])
+#Se tentar uma chave q n existe da erro
+# Forma 2:
+# Acessando via get(recomendado)
+print(paises.get("Br"))
+print(paises.get("EUA"))
+print(paises.get("Rus"))# Aqui não existe essa chave e ele retorna NONE
+
+
+
+#Se tentar uma chave q n existe, retorna "none"
+# O tipo NONE em python representa o tipo sem tipo, conhecido tbm como tipo vazio(ele é um tipo sem tipo)
+
+numeros = None
+print(numeros)
+print(type(numeros))
+
+# Quando utilizar o tipo 'None', podemos utilizar quando queremos criar uma variavel e inicializa-la com um tipo sem tipo
+# Antes d recebermos um valor final
+# Tipo None sempre vai ser falso no python
+# exemplo
+numeros = None
+numeros = 1.45,1.55,1.22
+print(numeros)
+print(type(numeros))
+
+
+
+paises = {"Br": "Brasil", "EUA": "Estados Unidos"}
+# Caso o get não encontre o valor com a chave encontrada, será retornado o valor None
+pais = paises.get("Rus")
+if pais:
+    print("Encontrei o Pais",pais)
+else:
+    print("Não encontrei o Pais",pais)
+
+pais = paises.get("Br")
+if pais:
+    print("Encontrei o Pais")
+else:
+    print("Não encontrei o Pais")
+
+# Podemos definir um valor padrão para caso não encontremos o valor com a chave informada
+# Exemplo
+paises = {"Br": "Brasil", "EUA": "Estados Unidos"}
+pais = paises.get("Rus","Não encontrado")
+print("Encontrei o pais",pais)
+pais = paises.get("Br","Não encontrado")
+print("Encontrei o pais",pais)
+
+
+paises = {"Br": "Brasil", "EUA": "Estados Unidos"}
+print("Br" in paises)#Ta vendo se as chaves estão no dicionario q é paises
+print("Ru" in paises)
+print("EUA" in paises)
+print("Estados Unidos" in paises)#Vai dar false pq ele buscar por chave e isso é um valor
+if "ru" in paises:
+    russia = paises["Rus"]
+print(paises)
+
+
+
+# Pode-se utilizar qualquer tipo em dicionario(int,floar,boolean,string)
+# Tuplas por exemplo, são interessantes de se usar como chave no dicionario, pois a mesma é imutavel
+# Tuplas são imutaveis
+localidades = {
+    (35.6895 , 39,6917): "Escrotório em Toquio",
+    (40.7128 , 74.0060): "Escrotório em Nova york",
+    (37.6895 , 122.6917): "Escrotório em São paulo",
+}
+print(localidades)
+print(type(localidades))
+
+
+# Adicionar elementos em um dicionário
+receita = {"Jan" : 100, "Fev" : 120, "Mar" : 300}
+print(receita)
+print(type(receita))
+
+# Forma 1 // Mais comum
+receita["abr"] = 350
+print(receita)
+
+# Forma 2
+novo_dado = {"Mai" : 500}
+receita.update(novo_dado)
+print(receita)
+
+# Atualizando dados de um dicionario
+# Forma 1
+receita["Mai"] = 550
+print(receita)
+
+# Forma 2
+receita.update({"mai" : 600})
+print(receita)
+# Conclusão, a forma de add novos elementos ou atualizar dados, é a mesma
+# Em dicionarios não podemos ter chaves repetidas(nomes iguais)
+
+
+# Como remover dados de um dicionario
+receita = {"Jan" : 100, "Fev" : 120, "Mar" : 300}
+print(receita)
+# Forma 1 // Mais comum
+
+ret = receita.pop("Mar")# remove Mar e retorna o valor
+print(ret)
+print(receita)
+# Obs: è necessário sempre informar a chave
+# Ao removermos um objeto, o valor desse objeto é sempre retornado
+
+# Forma 2
+
+del receita["Fev"]# Neste caso o valor removido não é retornado
+print(receita)
+
+

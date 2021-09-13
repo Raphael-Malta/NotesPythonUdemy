@@ -1,0 +1,78 @@
+# Entendendo                **kwargs
+# pode se chamar **xis, mas por convenção chamamos de **kwargs
+# é só mais um parametro, mas diferente do args que coloca os valores extras em uma tupla
+# o **kwargs exige que utilizemos parametros nomeados, assim os extras viram um dicionario
+
+def cores_favoritas(**kwargs):
+    for pessoa,cor in kwargs.items():
+        print("A cor favorita da pessoa:",pessoa.title(),"é:",cor)#Title é pra por a string em maiusculo
+cores_favoritas(marcos = "Verde", julia="Amarelo", raphael = "Preto")# repare que ele criou um dicionario
+
+# OBS: os parametros args e kwargs, não são obrigatorios
+cores_favoritas()# não é necessario informar aqui, tanto faz
+cores_favoritas(Raphael="Preto")
+
+
+# Exemplo mais complexo
+def cumprimento_especial(**kwargs):
+    if "Eae" in kwargs and kwargs["Eae"] == "blz":
+        return "Voce recebeu um cumprimento"
+    elif "Eae" in kwargs:
+        return kwargs
+    return "Não sei quem é você bro"
+
+print(cumprimento_especial())
+print(cumprimento_especial(Eae="blz"))
+print(cumprimento_especial(Eae="ola"))
+print(cumprimento_especial(Eae="sla bro"))
+############################################
+# nas funções podemos ter (nesta ordem):
+- Parametros Obrigatorios
+- Parametros *args
+- Parametros default(não obrigatorio)
+- Parametros **kwargs
+Tem que seguir está ordem!!!!
+############################################
+
+
+# Exemplo de função seguindo a ordem!
+def minha_func(idade,nome,*args,solteiro=True,**kwargs):
+    print(nome,"tem",idade,"anos")
+    print(args)
+    if solteiro:# se for ture
+        print("solteiro")
+    else:
+        print("não solteiro")
+    print(kwargs)
+
+
+minha_func(8,"julia")
+minha_func(18,"felicity",4,5,3,solteiro=True)
+minha_func(34,"Sei la", eu="Não",voce="Vai")
+minha_func(21,"Raphael",9,4,3,java=False,python=True)
+
+minha_func(21,"Raphael","Em busca do primeiro emprego",solteiro=True, c=True, python=True,Java=False)
+
+# Desempacotar com **kwargs
+def mostra_nomes(**kwargs):
+    return kwargs["Nome"], kwargs["Sobrenome"]
+
+
+nomes = {"Nome":"Raphael","Sobrenome":"Malta"}
+print(mostra_nomes(**nomes))
+
+
+def soma_mult_num(a,b,c):
+    print(a+b+c)
+# pode-se utilizar em qualquer um deles, lista,tupla,conjunto(sets)
+lista = [1,2,3]
+tupla = (1,2,3)
+conjunto = {1,2,3}
+
+soma_mult_num(*lista)
+soma_mult_num(*tupla)
+soma_mult_num(*conjunto)
+# Se for dicionario é **
+# em um dicionario os nomes devem ser o mesmo do parametro da função
+dicionario = dict(a=1, b=2, c=3)
+soma_mult_num(**dicionario)

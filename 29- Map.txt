@@ -1,0 +1,49 @@
+# Map
+# Com map fazemos mapeamento de valores para função
+
+
+import math
+def area(r):
+    # Calcula a areq do circulo com raio "r"
+    return math.pi * (r ** 2)
+print(area(2))
+print(area(5.3))
+
+raios = [2, 5, 7.1, 10, 4, 0.3]
+# Formula comum para fazer isso
+areas = []
+for r in raios:
+    areas.append(area(r))
+print(areas)
+
+# Forma utilizando map
+
+# Map é uma função que recebe dois parametros, o primeiro é a função e o segundo um iteravel
+
+areas1 = map(area,raios)# area é a função la em cima, e raios é o iteravel la em cima// GEralmente se utiliza map com uma expressão lambda
+print(areas1)# Retorna um map object
+print(type(areas1))
+print(list(areas1))# Converte pra lista
+#print(tuple(area1))# Converte para tupla
+
+# FOrma 3 map com labda
+print(list(map(lambda r: math.pi * (r ** 2),raios)))
+
+# Obs: Após utilizar a função Map depois da primeira utilização do resultado ele zera
+
+# Para Fixar - Map
+# Temos dados iteraveis
+# Dados : a1,a2 .... an
+#Temos uma função:
+#f(x)
+# Utilizamos a função  map(função,dados) onde map vai maepar todos os dados e aplicar a função
+
+# outro exemplo
+
+cidades = [("Belim",29),("Cairu",36), ("Los Angels",26), ("Tokyio",27), ("New York",28)]# Uma lista contendo tuplas, nome da cidade com os graus
+print(cidades)
+# transformar em f = 9/5 * c + 32
+# Criando uma lambda
+celsius_para_f = lambda dado: (dado[0], (9/5) * dado[1] + 32)
+# dado[0] é o retorno q no caso seria Brlim e Dado[1] seria a temperatura na formula
+print(list(map(celsius_para_f, cidades)))

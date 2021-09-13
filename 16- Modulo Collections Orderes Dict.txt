@@ -1,0 +1,26 @@
+# Modulo colections: Ordered dict
+# Em um dicionario a ordem de inserção não é garantida
+dicionario = {"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
+print(dicionario)
+for chave,valor in dicionario.items():
+    print("Chave",chave,"valor",valor)
+print("LInhaaaaaaaaaaaaaaaaaaaaa")
+# Fazendo o import
+from collections import OrderedDict
+# OrdererDict é um dicionario que garante a ordem de incerção dos elementos
+dicionario1=  {"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
+for chave,valor in dicionario.items():
+    print("Chave",chave,"Valor",valor)
+
+
+
+# Entendendo a diferença entre dict e ordered Dict
+dicionario = {"a": 1, "b": 2}
+dicionario2= {"b": 2, "a": 1}
+print(dicionario == dicionario2) #Ele volta True aqui, pq pro dicionario comum ele não guarda a ordem, ele simplesmente só armazena
+
+# Ordered Dict
+from collections import OrderedDict
+odr = {"a": 1, "b": 2}
+ord2= {"b": 2, "a": 1}
+print(ord == ord2)# Aqui da False, para serem iguais eles tem de ter a ordem igual também.

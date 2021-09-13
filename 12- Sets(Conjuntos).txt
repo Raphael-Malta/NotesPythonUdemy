@@ -1,0 +1,67 @@
+# Conjuntos em qualquer linguagem de programação, estamos fazendo referência a teoria dos conjuntos da matematica
+# No python os conjuntos são chamados de Sets
+# Dito isso na mesma forma que na matematica, Sets não possuem valores duplicados
+# Não possuem valores duplicados
+# Não possuem valores ordenados
+# Valores não são acessados via indice (posição)
+# Conjuntos são bons quando precisamos armazenar elementos mas não nos importamos com a ordenação deles.
+# quando não precisamos se preocupar com chaves,valores e itens duplicados
+
+# Os Sets(conuntos) são referenciados em python com {}
+
+# Diferença entre conjuntos(Sets) e mapas(Dicionarios):
+Um dicionario tem chave/valor
+Um conjunto tem valor(apenas valor)
+
+
+
+# Definindo um conjunto:
+# Forma 1:
+s = set({1, 2, 3, 4, 5, 5, 6, 7, 2, 3})# Temos valores repetidos
+print(s)#Os valores repetidos não são imprimidos
+print(type(s))
+
+
+# Forma 2:
+s = {1, 2, 3, 4, 5, 5}
+print(s)# os numeros repetidos são ignorados e não são imprimidos
+print(type(s))
+# Exemplo:
+#s = set("Raphael Malta")
+#print(s)
+
+# Verificando se o elemento está no conjunto
+if 3 in s:
+    print("tem o 3")
+else:
+    print("Não tem 3")
+
+
+
+# Além de não ter valores duplicados, não tem ordem!
+
+# Listas aceitam valores duplicados
+lista = [99, 2, 34, 23, 2, 12, 1, 44, 5, 34]
+print("Lista:",lista,len(lista))# Len é pra saber o tamanho
+
+# Tuplas também aceitam valores duplicados
+tupla = (99, 2, 34, 23, 2, 12, 1, 44, 5, 34) #Tupla não precisa dos () funcionaria sem
+print("Tupla:",tupla, len(tupla))
+
+# Dicionarios não aceitam chaves duplicadas
+dicionario = {}.fromkeys([99, 2, 34, 23, 2, 12, 1, 44, 5, 34],"dict")
+print("Dicionario:",dicionario,len(dicionario))
+
+# Conjuntos não aceitam valores duplicados
+conjunto = {99, 2, 34, 23, 2, 12, 1, 44, 5, 34}
+print("Conjunto:",conjunto,len(conjunto))
+
+# Assim como todo outro conjunto, python, podemos colocar todos os tipos de dados misturados em Sets
+# Exemplo
+s = {1, "b", 44, True}
+print(s)
+print(type(s))
+
+# Podemos iterar em um Set normalmente
+for valor in s:
+    print(valor)

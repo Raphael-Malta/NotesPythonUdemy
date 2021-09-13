@@ -1,0 +1,26 @@
+# Reduce
+# a partir do python 3 a cima a função reduce não é mais uma função integrada
+# Agora importa e utiliza a função a partir do modulo functools
+# utilize a função reduce() apenas se vc realmente precisar dela, Maioria das vezes um loop for é mais legivel
+# A função reduce recebe dois parametros, recebe a função e o iteravel
+
+# Utilizando a função reduce para multiplicar todos o numeros de uma lista
+from functools import reduce
+
+dados = [1, 2, 3, 4, 5, 6, 7, 13, 17, 19, 23, 29]
+# para utilizar o reduce precisamos de uma função que receba 2 parametros
+def func(a,b):
+    return a*b
+# ou
+mult = lambda x,y: x * y
+res = reduce(mult,dados)
+res1 = reduce(func,dados)
+print(res)
+print(res1)
+
+# utilizando um loop normal agora
+res2 = 1
+for n in dados:# n seria cada termo de dados que vai fazer a multiplicação
+    res2 = res2 * n
+print(res2)
+# reduce meio que funciona igual a um loop for

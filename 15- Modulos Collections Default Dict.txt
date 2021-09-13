@@ -1,0 +1,12 @@
+# Modulo colections : Default Dict
+# Ao criar um dicionario utilizando Default Dict,  nos informamos um valor default, podendo utilizar um lambda pra isso, esse valor será utilizado sempre q não houver um valor definido
+# Caso tentemos acessar uma chave que não existe essa chave será criada e o valor default será atribuido.
+# Fazendo o import
+from collections import defaultdict
+dicionario = defaultdict(lambda: 0)
+# lambda são funções sem nome que podem ou não receber parametros de entrada e retornar valores
+print(dicionario)
+dicionario["curso"] = "Programação em Python"
+print(dicionario)
+print(dicionario["outro"])# Se fosse dicionario comum daria key error, mas  aqui não, ele retorna 0 q é o default
+print(dicionario)

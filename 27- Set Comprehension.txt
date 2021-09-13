@@ -1,0 +1,21 @@
+#Set Comprehension
+lista = [1, 2, 3, 4, 5]
+set = {1, 2, 3, 4, 5}
+
+#####################################################################
+# Relembrando set não aceita valores repetidos e não guarda ordenação
+#####################################################################
+
+numeros = {num for num in range(1,7)}
+print(numeros)
+# outro exemplo
+numeros = {x ** 2 for x in range(10)}
+print(numeros)
+
+# Fazendo uma alteração na estrutura a cima para virar um dicionario ao invés de set
+numeros = {x : x ** 2 for x in range(10)}
+print(numeros)
+
+# Utilizando string
+letras = {letra for letra in "Geek"}# Não mantem a ordenação e nem os valores repetidos
+print(letras)

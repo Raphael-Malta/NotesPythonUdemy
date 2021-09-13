@@ -1,0 +1,34 @@
+
+# Len, sum, abs, round
+# Len retorna o tamanho, Numero de itens de um iteravel
+#
+# Exemplo len
+print(len("Raphael Malta"))# Conta com o espaço, funciona com qualquer iteravel
+# QUando usamos len o python faz o seguinte
+print("Raphael Malta" .__len__())# Função que tem dois underlines é uma função que tem  DUNDER
+
+
+# Utilizando abs
+# abs() retorna o valor absoluto de um número inteiro ou real, de forma basica seria seu valor real sem o sinal
+print(abs(-5))
+print(abs(5))
+print(abs(3.14))
+print(abs(-3.14))
+
+# utilizando sum
+# Recebe como parametro um iteravel, podendo receber um valor inciial e retorna a soma total dos elementos, incluindo o valor inicial
+# Obs: O valor inicial default é 0
+# Exemplos sum
+print(sum([1, 2, 3, 4, 5]))
+print(sum([1, 2, 3, 4, 5], 5)) # aqui ele tem o valor inicial de 5, ou seja a soma total mais o valor inicial q é 5
+# Sum não funciona com strings
+
+#  UTilizando Round
+# round(), retorna um numero arredondado para N digitos de precisão, apos a casa decimal, se a precisão nao for informada retorna o inteiro mais proximo da entrada
+# Exemplo
+
+print(round(10.2))
+print(round(10.5))
+print(round(10.6))
+print(round(1.212121212212121, 2))#Esse 2 dps da virgula é com quantas casas vc quer que ele pare
+

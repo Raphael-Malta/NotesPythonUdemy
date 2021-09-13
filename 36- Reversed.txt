@@ -1,0 +1,41 @@
+# Reversed
+# ela é diferença da função reverse de lista
+lista = [1, 2, 3, 4, 5]# Reverse só funciona nas listas
+lista.reverse()
+print(lista)
+
+# Reversed agora
+# reversed funciona com qualquer iteravel, ou seja ela inverte qualquer iteravel
+# exemplo
+lista = [1, 2, 3, 4, 5]
+res = reversed(lista)
+print(res)# Veja que a função reversed retorna um iteravel chamado list reverse iterator
+print(type(res))
+# convertendo o elemento retornado para uma lista,tupla ou conjunto(set)
+
+# Lista
+print(list(reversed(lista)))
+
+# Tupla
+print(tuple(reversed(lista)))
+
+# cpnjunto
+print(set(reversed(lista))) # Veja q o Set vem comoo 1,2,3,4,5 lembre-se que set nao guarda ordem, por isso ele vem desse jeito
+
+# podemos iterar sobre o Reversed
+for letra in reversed("Raphael Malta"):
+    print(letra,end="")
+print("\n")
+# Fazendo o mesmo sem o uso do for
+print("".join(list(reversed("Raphael Malta"))))  # quando se usa join transforma a lista de strings em uma string novamente
+
+# Veja como fazer isso mais facil com o slice de strings
+print("Raphael Malta"[::-1])# Os :: é do começo ao final sempre tiran -1
+
+# Usando reversed pora fazer um loop em for reverso
+for n in reversed(range(0,10)):
+    print(n, end=" ")
+print("\n")
+# fazendo isso com o proprio range
+for n in range(9,-1,-1): # vai de 9 até -1, e o passo é -1, ou seja pega de 9 a 0 e vai sempre tirando 1
+    print(n,end=" ")

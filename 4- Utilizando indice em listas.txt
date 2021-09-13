@@ -1,0 +1,30 @@
+#Utilizando indice
+cores = ['verde','amarelo','azul','branco']
+for cor in cores:
+    print(cor)
+indice = 0
+while indice < len(cores):
+    print(cores[indice])
+    indice += 1
+
+
+cores = ['verde','amarelo','azul','branco']
+
+#gerar indice em um for
+#enumerate ele enumera os indices, ou seja oq tem dentro da lista ele mostra os indices
+for indice,cor in enumerate(cores):
+    print(indice,cor)
+#outro jeito
+cores = list(enumerate(cores))
+print(cores)
+
+
+#listas aceitam valores repetidos, ele sempre joga o valor para o final
+lista = []
+lista.append(42)
+lista.append(42)
+lista.append(22)
+lista.append(22)
+lista.append(30)
+lista.append(42)
+print(lista)

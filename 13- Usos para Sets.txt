@@ -1,0 +1,90 @@
+# Alguns usos com Sets(conjuntos)
+# Imagine que fizemos um formulario de cadastro de visitantes em uma feira ou museu
+# Os visitantes informam manualmente a cidade de onde vieram
+# Adcionaremos cada cidade em uma lista python, já que em uma lista podemos adicionar novos elementos e ter repetições
+
+cidades = ["Belo Horizonte", "São Paulo", "Campo Grande", "Cuiaba", "Campo Grande", "São Paulo", "Cuiaba"]
+print(cidades)
+print(len(cidades))# Números de pessoas que visitaram o museu
+
+# Agora precisamos quantas cidades distintas(não repetidas) temos
+print(len(set(cidades)))# QUando vc coloca 'set' ele remove os duplicados
+
+# Adcionando elementos em um conjunto, conjuntos são mutaveis(modificaveis)
+s = {1, 2, 3}
+s.add(4)# Caso adicione 4 novamente, ele n adiciona, ele n duplica o valor, simplesmente é ignorado e não é adicionado
+
+print(s)
+
+
+# Remover itens em um conjunto
+s = {1, 2, 3}
+print(s)
+# Forma 1:
+s.remove(3)# não é indice, é o valor 3 e não posição. Informamos o valor a ser removidos, isso pq conjuntos não possuem indice
+print(s)
+
+# Forma 2:
+s.discard(2)
+print(s)
+
+
+# Copiando um conjunto para o outro
+
+s = {1,2,3}
+print(s)
+# Forma 1: Deep Copy( Ele não altera o original)
+novo = s.copy()
+print(novo)
+novo.add(4)
+print(s)
+print(novo)
+
+# Forma 2: Shallow copy(altera o original)
+novo1 = s
+novo1.add(4)
+print(s)
+print(novo1)
+
+
+# Podemos remover todos os iens do conjunto
+s = {1,2,3}
+print(s)
+s.clear()
+print(s)
+
+estudantes_py = {"Marcos", "Diego", "Raphael"}
+estudantes_java = {"Patrick", "Bryan", "Raphael"}
+# Raphael se repete nos dois
+# métodos para ter unicos(sem repetições de nome)
+unicos1 = estudantes_py.union(estudantes_java)
+print("São estudantes unicos:",unicos1)
+
+
+# Forma 2: Utilizando o caractere | (pipe, ao lado esquerdo  do Z)
+unicos2 = estudantes_py | estudantes_java
+print("São estudantes unicos",unicos2)
+
+# Gerar um conjunto de estudantes que estão nos dois cursos, no caso apenas o "Raphael"
+# Forma 1:
+ambos1 = estudantes_py.intersection(estudantes_java)
+print(ambos1)
+
+# Forma 2 : utilizando o &
+ambos2 = estudantes_py & estudantes_java
+print(ambos2)
+
+# Gerar um conjunto de estudantes que estão em um curso só(estão em um e não no outro)
+so_Python =estudantes_py.difference(estudantes_java)
+print(so_Python)
+so_Java = estudantes_java.difference(estudantes_py)
+print(so_Java)
+
+# Revisar
+# Soma, Valor Max, Valor Min, Tamanho se os valores forem inteiros ou reias
+
+s = {1, 2, 3, 4, 5, 6}
+print(sum(s))
+print(max(s))
+print(min(s))
+print(len(s))

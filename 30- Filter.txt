@@ -1,0 +1,72 @@
+# Filter:
+# Server para filtrar dados de uma determinada coleção, utiliza-se filter()
+
+valores = 1, 2, 3, 4, 5, 6 # Relembrando, Isso é uma tupla, pode ter parenteses ou não
+media = (sum(valores)/ len(valores))
+print(media)
+
+import statistics # biblioteca para trabalhar com dados estatisticos
+
+dados = [1.3, 2.7, 0.8, 4.1, 4.3, -0.1]
+
+# Calculando a media dos dados utilizando a função mean(),  mean significa média
+
+media = statistics.mean(dados)
+print(media)
+
+# Assim como a função map(estudada no topico anterios) a filter recebe 2 parametros, sendo uma função e um iteravel
+# Como função utilizaremos a lambda com exemplo
+
+res = filter(lambda x: x > media,dados)# Lambda recebe um parametro de entrada no caso X q é cada um dos números de dados, pega os maiores que a media e printa
+print(type(res))
+print(list(res))
+print(list(res))# vai gerar uma vazia pq só fica a primeira vez na memoria, assim como na função map()
+
+paises = ["", "Argentina", "", "Brasil", "Chile", "", "Colombia", "", "Equador", "", "", "Venezuela"] # Note q temos dados faltando
+print(paises)
+res = filter(None, paises) #None seria uma função sem tipo, no caso como o filter precisa passar uma função, ele faz com q os dados vazios sejam eliminados
+print(list(res))
+
+# Ou podemos fazer com o lambda
+res = filter(lambda pais: len(pais) > 0, paises)
+print(list(res))
+
+# 3 forma:
+res = filter(lambda pais: pais != "", paises)
+print(list(res))
+
+
+# A diferença entre map() e filter()
+# na map recebe-se dois parametros, q são: Uma função e um iteravel e retonra um objeto mapeando a função para cada elemento do iteravel
+# já o filter recebe-se dois parametros, uma função e um iteravel e retorna um objeto filtrando apenas os elementos de acordo com a função
+# Filter sempre retorna true or false
+# já no map retorna valores
+
+# Exemplo mais complexo:
+usuarios = [    # Lista
+    {"username": "Raphael", "tweets":["I like games", "Exemplo falado de algo"]}, # Dicionarios, dentro dos dicionarios possuimos listas tbm []
+    {"username": "Diego", "tweets": ["The life is sneak"]},
+    {"username": "Marcos", "tweets": ["Bixcoito"]},
+    {"username": "Patrick", "tweets": []},
+    {"username": "Bryan", "tweets": []}
+]
+print(usuarios)
+# Filtrar os usuarios que estão inativos no tweeter
+# No caso se ele n tweetou nenhuma vez, ele é inativo.
+inativos = list(filter(lambda usuario: len(usuario["tweets"]) == 0, usuarios))# PEga os q estão com tweet vazio
+
+print(inativos)
+
+# Forma 2:
+
+inativos = list(filter(lambda usuario: not usuario["tweets"], usuarios))# o not nega, ou seja ele pegaria os q tem conteudo, mas o not faz com q ele pegue apenas os q n tem nada
+# o vazio em python significa false, assim como o 0
+print(inativos)
+
+# COmo combinar filter e map
+
+nomes = ["Vanessa", "ana", "Maria"]
+# devemos criar uma lista contendo "sua instrutora é: + nome da instrutora"
+# desde q cada nome , tenha menos de 5 caracteres
+lista = list(map(lambda nome: f"sua instrutora é {nome}", filter(lambda nome: len(nome) <5, nomes)))
+print(lista)

@@ -1,0 +1,169 @@
+lista1 = [1,1,1,5,10,20,30,100,40,50,200]
+lista2 = ['R', 'a', 'p', 'h', 'a', 'e', 'l']
+lista3 = []
+lista4 = list(range(11))
+lista5 = list('Raphael Malta')
+num = 8
+if num in lista4:
+    print("Achei o número", num, "pohan")
+else:
+    print(num,"ta aqui não lek ")
+
+
+#ordenar a lista facilmente.
+lista1.sort()
+print(lista1)
+lista5.sort()
+print(lista5)
+#pode contar o valor de ocorrencias de valor em uma lista
+test = 'a'
+print(lista1.count(1))#quantos numeros 1
+print(lista5.count(test))#quantos 'a' possui
+# Adicionar elementos em listas(utiliza-se a função append) com o append só se pode adicionar um elemento por vez
+# lista1.append(42,10,2) está errado
+# lista1.append([42,10,2]) pode por que é um elemento da lista q esta colocando (mas vai com os [] junto)
+
+print(lista1)
+lista1.append(42)
+print(lista1)
+
+lista1.extend([12,13,16])#São adicionados individualmente
+print(lista1)
+# Se for pra usar valor UNICO se usa o append e se for + de 1 se usa o extend
+
+
+#Podemos inserir um novo elemento na lista informando a posição do indice(colocar ele no lugar q vc quiser)
+#não substitui o valor inicial, só vai se deslocar pra direita
+lista1.insert(2,'ValorNew')
+print(lista1)
+
+
+#Podemos facilmente juntar duas listas(aqui cria uma nova lista)
+lista6= lista1 + lista2 #ou pode se por lista1+=lista2
+print(lista6)
+#outro jeito de se juntar duas listas(aqui fica na lista1)
+lista1.extend(lista2)
+print(lista1)
+
+
+#reverse é pra inverter a lista
+lista1.reverse()
+lista2.reverse()
+print(lista1)
+print(lista2)
+#outro método
+print(lista1[::-1])
+print(lista2[::-1])
+
+#copiar uma lista
+lista6= lista2.copy()
+print(lista6)
+
+
+#tamanho da lista
+print(len(lista1))
+print(len(lista2))
+print(len(lista3))
+print(len(lista4))
+print(len(lista5))
+
+#remover o ultimo elemento da lista
+print(lista1)
+lista1.pop()#remover o elemento e retorna ele, ou seja ele mostra qual o elemento está tirando
+print(lista1)
+
+#pode remover um elemento pelo indice, os elementos da direita serão deslocados para esquerda
+lista1.pop(5)
+print(lista1)
+
+#limpar toda a lista, excluir os elementos
+lista1.clear()
+print(lista1)
+
+#repetir os elementos de uma lista pode ser assim
+nova = [1,2,3]
+nova = nova * 3
+print(nova)
+
+
+#pode-se converter uma string para uma lista, split por padrão separa os elementos da lista pelo espaço entre elas
+
+curso = 'programação em python'
+print(curso)
+curso = curso.split()
+print(curso)
+#segundo exemplo
+curso = 'programação,em,python'
+print(curso)
+curso = curso.split(',')#dentro do parenteses vc informa qual é o separador da string
+print(curso)
+
+
+#convertendo uma lista em string
+lista6 = ['Programação', 'em', 'python']
+print(lista6)
+curso = ' '.join(lista6)#esse ' ' pega cada elemento e coloca um espaço entre eles
+print(curso)
+#dentro do espaço vc coloca oq quer pra separar por exemplo
+curso = '$'.join(lista6)
+print(curso)
+
+
+lista6 = [1,2.3,True,'geek','d',[1,2,3,4],151515]#podemos colocar qualquer tipo de dado em uma lista, inclusive misturar os dados
+print(lista6)
+print(type(lista6))
+
+
+
+
+#Iterando sobre listas:
+#exemplo 1: Usando FOR:
+soma =0
+for elemento in lista4:
+    print(elemento)
+    soma += elemento
+print(soma)
+
+soma = ''#string vazia
+for elemento in lista2:
+    print(elemento)
+    soma += elemento
+print(soma)
+
+#Exemplo 2: Usando WHILE:
+
+carrinho = []
+produto = ''
+while produto != 'sair':
+    produto= (input("Adicione um produto na lista ou digite 'sair' para sair: "))
+    if produto != 'sair':
+        carrinho.append(produto)
+
+
+for produto in carrinho:
+    print(produto)
+
+    #utilizando variaveis em lista
+numeros = [1,2,3,4,5]
+print(numeros)
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+numeros =[num1,num2,num3,num4,num5]
+print(numeros)
+
+#em listas fazemos acesso de forma indexada
+cores = ['verde','amarelo','azul','branco']
+print(cores[0])#posições
+print(cores[1])
+print(cores[2])
+print(cores[3])
+print()
+#fazer acesso aos elementos de forma indexada inversa
+#pra entender o inverso, pense como um circulo, o final está ligado com o incio, se o inicio é 0 o final é -1
+print(cores[-1])
+print(cores[-2])
+print(cores[-3])
+print(cores[-4])#se tentar -5 da erro pq n existe esse indice

@@ -1,0 +1,68 @@
+
+# *args é um parametro como outro qualquer, isso significa que pode chamar de qualquer coisa, desde que comece com *
+# O parametro *args utilizado em uma função,coloca os valores extras informados como entrada em uma tupla,
+# lembrando que tuplas são imutaveis
+
+
+def soma_todos_numeros(num1,num2,num3):
+    return num1+num2+num3
+
+
+print(soma_todos_numeros(4,6,9))
+
+
+def soma_todos_numeros(num1=0,num2=0,num3=0):
+    return num1+num2+num3
+
+
+print(soma_todos_numeros(1,2))
+
+
+# Entendendo o args
+
+def soma_todos_numeros(*args):
+    total = 0
+    for numero in args:
+        total = total + numero
+    return total
+
+print(soma_todos_numeros(1))
+print(soma_todos_numeros(1,2,3))
+print(soma_todos_numeros(1,10,96))
+
+
+def soma_todos_numeros(*args):# jeito mais simplificado
+    return sum(args)# Como é uma tupla da pra utilizar
+print(soma_todos_numeros(1))
+print(soma_todos_numeros(1,2,3))
+print(soma_todos_numeros(1,10,96))
+print(soma_todos_numeros(1.1,10.2,2.2))# Utilizando numeros reais
+
+
+# outro exemplo de *args
+
+def verifica_info(*args):
+    if "Raphael" in args and "Malta" in args:
+        return "Bem vindo!"
+    else:
+        "Não sei qm tu é "
+
+print(verifica_info())
+print(verifica_info("Raphael","Malta"))
+print(verifica_info(1,2,3))
+print(verifica_info(1,"uni",3,"duni",4.5))
+
+
+def soma_todos_numeros(*args):
+    return sum(args)
+
+numeros = [1,2,3,4,5,6,7]# o asterisco ali no print serve  para desempacotar os dados
+# desempacotador
+print(soma_todos_numeros(*numeros))
+
+numeros = [1,2,3,4,5,6,7]#lista
+print(soma_todos_numeros(*numeros))
+numeros = (1,2,3,4,5,6,7)# Tupla
+print(soma_todos_numeros(*numeros))
+numeros = {1,2,3,4,5,6,7}# Set
+print(soma_todos_numeros(*numeros))

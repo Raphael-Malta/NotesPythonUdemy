@@ -1,0 +1,66 @@
+# Funções com retorno:
+# Exemplo de uma já existente em python
+num = [1,2,3]
+ret = num.pop()# Pop remove o ultimo numero da lista
+print(num)
+print(ret)# Retorna o número q foi retirado
+# a função print em si não retorna nada
+# Exemplo de função:
+def quadrado_de_sete():
+    print(7 * 7)
+
+ret = quadrado_de_sete()
+print(ret)# Ret n retorna nada pq é um print
+# Em python qnd uma função não retorna nenhum valor, o retorno é NONE
+
+# Função refatorada(reescrever), para que ela retorne o valor:
+def quadrado_de_setee():
+    return 7 * 7
+#Funções python que retornam valores, devem retornar esses valores com 'return'
+
+retorno = quadrado_de_setee()
+print(retorno)
+#OU
+print(quadrado_de_setee())
+print(quadrado_de_setee()+ 1)# Pode iterar desse jeito também
+
+# Refatorando a primeira função
+def diz_oi():
+    return "Oi"
+print(diz_oi())
+
+
+def nova_func():
+    var = True
+    if var:# Se ela for Verdadeira(True)
+        return 4
+    elif var is None:
+        return 3.2
+    return"B"
+print(nova_func())
+
+
+def outra_func():
+    return 2, 3, 4, 5
+
+num1,num2,num3,num4 = outra_func()
+print(num1,num2,num3,num4)# Aqui estamos desempacotando essas tuplas
+# Desse jeito é mais fácil
+print(outra_func())# Aqui vem no formato de tupla
+
+# Criando uma função para jogar uma moeda
+from random import random # Importando uma biblioteca
+def joga_moeda():
+    # gera uma número random entre 0 e 1
+    if random() > 0.5: # Pode guardar o valor de random em uma variavel, porém nesse caso não precisa
+        return "CARA"
+    return "COROA"
+print(joga_moeda())
+
+def impar():
+    num = 10
+    if num %2 != 0:
+        return "Impar"
+    return "Par"
+print(impar())
+
